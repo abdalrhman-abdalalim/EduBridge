@@ -1,0 +1,14 @@
+Project structure :
+- Header 
+    - NavBar 
+- Main
+    - paragraph
+    - 3 cards
+    - courses Section
+        - paragraph
+        - courses cards
+        - reviews section
+            - 3 reviews card
+    - join us section
+        - email input 
+- Footer

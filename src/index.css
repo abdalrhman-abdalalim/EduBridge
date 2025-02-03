@@ -1,0 +1,637 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+:root {
+  --dark-blue: #252b42;
+  --sky-blue: #23a6f0;
+  --light-sky-blue: #b2e3ff;
+  --red: #e74040;
+  --light-pink: #ffcdc1;
+  --light-gray: #737373;
+  --yellow: #f3cd03;
+  --green: #2dc071;
+  --light-green: #b9eaa8;
+}
+
+body {
+  font-family: "Montserrat", serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/** Start Header Section */
+header {
+  background-color: var(--dark-blue);
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  height: 100px;
+  padding: 0 2em;
+  align-items: center;
+}
+
+header nav ul {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header nav h2 {
+  font-size: 24px;
+  color: white;
+  font-weight: 600;
+}
+
+header nav ul li a {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+header nav ul li a:hover {
+  color: var(--red);
+}
+
+.LoginBtn {
+  background: transparent;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100px;
+  font-family: "Montserrat", serif;
+  transition: all 0.3s ease;
+}
+
+.LoginBtn:hover {
+  transform: scale(1.2);
+}
+
+.JoinBtn {
+  border-radius: 8px;
+  align-items: center;
+  font-family: "Montserrat", serif;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-weight: 600;
+  width: 100px;
+  background-color: var(--sky-blue);
+  transition: all 0.3s ease;
+}
+
+.JoinBtn svg {
+  margin-left: 2px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.JoinBtn:hover {
+  transform: scale(1.2);
+}
+/** End Header Section */
+
+/** Start Main Section */
+
+/** Start Home Section */
+
+.home {
+  padding-top: 100px;
+  background-color: var(--dark-blue);
+  height: calc(100vh - 100px);
+}
+
+.home div h4 {
+  color: var(--red);
+  text-align: center;
+  font-weight: bold;
+}
+
+.home div h1 {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  word-wrap: normal;
+  width: 500px;
+  margin: auto;
+  line-height: 50px;
+}
+
+.home div p {
+  padding-top: 10px;
+  color: white;
+  width: 500px;
+  text-align: center;
+  margin: auto;
+  padding: 30px 0;
+}
+
+.home div .HomeBtnSection {
+  max-width: 350px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home div .HomeBtnSection button {
+  margin: auto;
+  padding: 10px;
+  min-width: 160px;
+  min-height: 40px;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.4s ease;
+  border: var(--red) 1px solid;
+  color: var(--red);
+  position: relative;
+  background-color: transparent;
+  font-weight: bold;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.home div .HomeBtnSection button::before {
+  content: "";
+  background-color: white;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 100%;
+  top: 0;
+  border-radius: 4px;
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.home div .HomeBtnSection button:hover::before {
+  width: 100%;
+}
+
+.home .CardDiv {
+  display: grid;
+  margin: auto;
+  max-width: 1050px;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.home .CardDiv .card {
+  max-width: 350px;
+  background-color: white;
+  max-height: 200px;
+  border-radius: 10px;
+  padding: 25px;
+  margin-top: 50px;
+}
+
+.home .CardDiv .card span {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.home .CardDiv .card span .LogoCard {
+  vertical-align: middle;
+}
+
+.home .CardDiv .card h3 {
+  font-size: 17px;
+  margin-top: 20px;
+}
+
+.home .CardDiv .card h3 {
+  font-size: 17px;
+  margin-top: 20px;
+  color: var(--dark-blue);
+}
+
+.home .CardDiv .card hr {
+  margin-top: 10px;
+  max-width: 45px;
+  min-height: 2px;
+  border: none;
+  background-color: #e74040;
+}
+
+.home .CardDiv .card p {
+  margin-top: -10px;
+  color: black;
+  font-size: 14px;
+  text-align: start;
+  max-width: 330px;
+}
+/** End Home Section */
+
+/** Start Course Section */
+.CoursesDiv {
+  background-color: white;
+  height: 100vh;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0px 2rem;
+  margin-top: 100px;
+}
+
+.CoursesDiv h6 {
+  color: var(--sky-blue);
+  font-size: 14px;
+}
+
+.CoursesDiv h1 {
+  color: var(--dark-blue);
+  padding: 10px 0;
+}
+
+.CoursesDiv .CoursesContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+  margin-top: 80px;
+  gap: 25px;
+}
+
+.CourseCard {
+  height: 600px;
+  position: relative;
+  color: var(--light-gray);
+  transition: all 0.5s ease;
+  overflow: hidden; /* Ensures content doesn't jump */
+  background: white;
+  border-radius: 10px; /* Soft rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.CoursesDiv .CourseCard .imgSection {
+  transition: all 0.5s ease;
+}
+
+.CoursesDiv .CourseCard .imgSection span {
+  background-color: var(--red);
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.CoursesDiv .CourseCard img {
+  width: 320px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.CoursesDiv .CourseCard .CourseRate {
+  display: flex;
+  font-size: 13px;
+  background-color: var(--dark-blue);
+  min-width: 60px;
+  color: white;
+  border-radius: 20px;
+  padding: 7px;
+  justify-content: center;
+}
+
+.CoursesDiv .CourseCard .CourseRate svg {
+  fill: yellow;
+  margin-right: 2px;
+}
+
+.CourseCard .CourseDetails {
+  opacity: 1;
+  transform: translateY(10px);
+  padding: 10px;
+  transition: all 0.5s ease;
+}
+
+.CourseCard .CourseDetails h4 {
+  padding: 3px 0;
+  color: var(--dark-blue);
+}
+
+.CoursesDiv .CourseDetails .CourseDetailsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CoursesDiv .CourseDetails .CourseDetailsHeader h5 {
+  color: var(--sky-blue);
+  font-weight: bold;
+}
+
+.CourseCard .CourseDetails p {
+  font-size: 14px;
+  padding: 10px 0;
+  color: var(--light-gray);
+  min-height: 110px;
+}
+
+.CourseInfo {
+  display: block;
+  transform: translateY(10px);
+  color: var(--dark-blue);
+  padding: 10px;
+  margin-top: -15px;
+  transition: all 0.5s ease;
+}
+
+.CourseInfo .SaleCourse {
+  font-size: 14px;
+}
+
+.CourseInfo .CoursePrice {
+  display: flex;
+  max-width: 90px;
+  justify-content: space-between;
+  padding: 7px 0;
+}
+
+.CourseInfo .CoursePrice .priceBefore {
+  text-decoration: line-through;
+}
+
+.CourseInfo .CoursePrice .priceAfter {
+  color: var(--green);
+}
+
+.CourseDuration {
+  display: flex;
+  justify-content: space-between;
+  max-width: 220px;
+  margin-left: -2px;
+}
+
+.CourseDuration h5 {
+  color: var(--light-gray);
+}
+
+.CourseTime {
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.CourseTime svg {
+  margin-right: 2px;
+  color: var(--sky-blue);
+}
+
+.CourseLessons {
+  display: flex;
+  align-items: center;
+}
+
+.CourseLessons svg {
+  color: var(--sky-blue);
+  margin-right: 4px;
+}
+
+.CourseCard button {
+  color: var(--sky-blue);
+  margin-top: 10px;
+  padding: 10px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  border: var(--sky-blue) solid 2px;
+  justify-content: space-between;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.CourseCard button:hover {
+  transform: scale(1.1);
+}
+
+.CoursesContainer:has(.CourseCard:hover) .CourseCard:not(:hover) {
+  filter: blur(4px);
+}
+/** End Course Section */
+
+/** Start Review Section */
+.reviewsSection {
+  background-color: white;
+  height: 70vh;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0px 2rem;
+  margin-top: 100px;
+}
+
+.reviewsSection h6 {
+  color: var(--sky-blue);
+  font-size: 14px;
+}
+
+.reviewsSection h1 {
+  color: var(--dark-blue);
+  padding: 10px 0;
+}
+
+.reviewsSection .ReviewContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+  margin-top: 80px;
+  gap: 25px;
+}
+
+.ReviewContainer div img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.ReviewContainer div {
+  max-width: 250px;
+  text-align: center;
+}
+
+.ReviewContainer div p {
+  font-size: 15px;
+  color: rgb(77, 77, 77);
+  padding: 15px 0;
+
+}
+
+.instructor {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.instructor  .InstructorInfo {
+  text-align: start;
+  margin-left: 10px;
+}
+
+.instructor .InstructorInfo h4:first-of-type {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sky-blue);
+}
+
+.instructor .InstructorInfo h4:last-of-type {
+  font-size: 16px;
+  font-weight: 800;
+  color: black;
+}
+/** End Review Section */
+
+
+/** Start Join Section */
+.JoinSection {
+  height: 40vh;
+  background-color: var(--dark-blue);
+  text-align: center;
+  padding-top: 40px;
+}
+
+.JoinSection h6 {
+  color: var(--sky-blue);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.JoinSection h1 {
+  color: white;
+  margin-top: 10px;
+  font-size: 38px;
+}
+
+.JoinSection p {
+  color: white;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.JoinSection input {
+  width: 500px;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 5px 0px 0px 5px;
+  border: none;
+  outline: none;
+}
+
+.JoinSection button {
+ padding: 10px;
+ border-radius: 0px 5px 5px 0px; 
+ outline: none;
+ border: none;
+ background-color: var(--sky-blue);
+ color: white;
+ font-weight: bold;
+}
+/** End Join Section */
+/** End Main Section */
+
+
+/** Start Footer */
+
+footer {
+   max-width: 1100px;
+  margin: auto;
+}
+
+footer .FSectoins {
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .FSectoins .Touch h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.FSectoins .Touch h5{
+  color: rgb(129, 129, 129);
+  padding: 10px 0;
+  max-width: 180px;
+}
+
+.Social {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100px;
+  padding: 10px 0;
+  color: var(--sky-blue);
+}
+
+footer .FSectoins .CompanyInfo h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.FSectoins .CompanyInfo ul li a{
+  color: rgb(129, 129, 129);
+  padding: 10px 0;
+  max-width: 180px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.FSectoins .CompanyInfo ul {
+  margin-top: 10px;
+}
+
+.FSectoins .CompanyInfo ul li{
+  padding: 3px 0;
+}
+
+
+footer .FSectoins .Features h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.FSectoins .Features ul li a{
+  color: rgb(129, 129, 129);
+  padding: 10px 0;
+  max-width: 180px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.FSectoins .Features ul {
+  margin-top: 10px;
+}
+
+.FSectoins .Features ul li{
+  padding: 3px 0;
+}
+
+footer p {
+  text-align: center;
+  padding: 15px 0;
+  color: rgb(99, 99, 99);
+}
+
+footer p span {
+  color: var(--sky-blue);
+  font-weight: bold;
+}
+/** End Footer */
+
