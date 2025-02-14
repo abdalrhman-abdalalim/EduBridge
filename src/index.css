@@ -593,6 +593,14 @@ footer .FSectoins .CompanyInfo h2 {
   font-size: 13px;
 }
 
+.FSectoins .Features ul li a:hover{
+  color: var(--dark-blue);
+}
+
+.FSectoins .CompanyInfo ul li a:hover{
+  color: var(--dark-blue);
+}
+
 .FSectoins .CompanyInfo ul {
   margin-top: 10px;
 }
