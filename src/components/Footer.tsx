@@ -1,80 +1,113 @@
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import "../index.css"
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import "../index.css";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { staggerChildren: 0.3, duration: 1 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const iconVariants = {
+  hover: { scale: 1.2, transition: { duration: 0.3 } },
+};
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="FSectoins">
-        <div className="Touch">
+    <motion.footer
+      initial="hidden"
+      whileInView="visible"
+      variants={containerVariants}
+    >
+      <motion.div className="FSectoins" variants={containerVariants}>
+        {/* Get In Touch Section */}
+        <motion.div className="Touch" variants={itemVariants}>
           <h2>Get In Touch</h2>
           <h5>Lorem ipsum dolor sit amet</h5>
           <div className="Social">
-            <FaFacebook />
-            <FaInstagram />
-            <FaTwitter />
+            <motion.div variants={iconVariants} whileHover="hover">
+              <FaFacebook />
+            </motion.div>
+            <motion.div variants={iconVariants} whileHover="hover">
+              <FaInstagram />
+            </motion.div>
+            <motion.div variants={iconVariants} whileHover="hover">
+              <FaTwitter />
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="CompanyInfo">
+        {/* Company Info */}
+        <motion.div className="CompanyInfo" variants={itemVariants}>
           <h2>Company Info</h2>
           <ul>
-            <li>
+            <motion.li variants={itemVariants}>
               <a href="#">About Us</a>
-            </li>
-            <li>
-              <a href="#">Carrier</a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={itemVariants}>
+              <a href="#">Career</a>
+            </motion.li>
+            <motion.li variants={itemVariants}>
               <a href="#">We are hiring</a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={itemVariants}>
               <a href="#">Blog</a>
-            </li>
+            </motion.li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div className="Features">
+        {/* Features Section */}
+        <motion.div className="Features" variants={itemVariants}>
           <h2>Features</h2>
           <ul>
-            <li>
+            <motion.li variants={itemVariants}>
               <a href="#">Business Marketing</a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={itemVariants}>
               <a href="#">User Analytic</a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={itemVariants}>
               <a href="#">Live Chat</a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={itemVariants}>
               <a href="#">Unlimited Support</a>
-            </li>
+            </motion.li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div className="Features">
+        {/* Resources Section */}
+        <motion.div className="Features" variants={itemVariants}>
           <h2>Resources</h2>
           <ul>
-            <li>
+            <motion.li variants={itemVariants}>
               <a href="#">IOS & Android</a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={itemVariants}>
               <a href="#">Watch a Demo</a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={itemVariants}>
               <a href="#">Customers</a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={itemVariants}>
               <a href="#">API</a>
-            </li>
+            </motion.li>
           </ul>
-        </div>
-      </div>
-      <p>
+        </motion.div>
+      </motion.div>
+
+      {/* Footer Text */}
+      <motion.p variants={itemVariants}>
         @ 2025 | all rights reserved made by <span>Abdalrhamn Aboalela</span>
-      </p>
-    </footer>
+      </motion.p>
+    </motion.footer>
   );
 };
 

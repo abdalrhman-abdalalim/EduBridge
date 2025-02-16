@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import "swiper/css";
 * {
   margin: 0;
   padding: 0;
@@ -42,6 +42,7 @@ header {
 }
 
 header nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   max-width: 1100px;
@@ -55,6 +56,11 @@ header nav ul {
   width: 400px;
   display: flex;
   justify-content: space-between;
+}
+
+header nav .Mobile-menu .dropdown-menu {
+  background-color: hsla(204, 87%, 54%, 0.5); /* 50% opacity */
+  display: block;
 }
 
 header nav h2 {
@@ -110,6 +116,54 @@ header nav ul li a:hover {
 .JoinBtn:hover {
   transform: scale(1.2);
 }
+
+nav .menu-icon {
+  font-size: 28px;
+  color: white;
+  margin-left: auto; /* Pushes the icon to the right */
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 30px;
+  background-color: rgba(255, 0, 0, 0.2);
+  width: 220px !important;
+  height: 200px;
+  z-index: 100;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.dropdown-menu li {
+  width: 100% !important;
+  background-color: var(--dark-blue);
+  margin-top: 10px;
+  font-size: 30px;
+  display: flex;
+  padding: 7px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+/** Media queery for Header */
+
+@media (max-width: 800px) {
+  header nav {
+    height: 70px;
+  }
+  header nav div:first-of-type {
+    margin-left: -50px;
+  }
+}
+
 /** End Header Section */
 
 /** Start Main Section */
@@ -119,7 +173,7 @@ header nav ul li a:hover {
 .home {
   padding-top: 100px;
   background-color: var(--dark-blue);
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
 }
 
 .home div h4 {
@@ -189,21 +243,235 @@ header nav ul li a:hover {
   width: 100%;
 }
 
+@media (max-width: 503px) {
+  .home div h1 {
+    width: 300px;
+    font-size: 35px;
+  }
+  .home div p {
+    max-width: 370px !important;
+    width: fit-content !important;
+  }
+  .JoinBtn {
+    padding: 7px;
+    width: 90px;
+  }
+  header nav h2 {
+    font-size: 20px;
+  }
+  header nav {
+    padding: 0 5px;
+  }
+  header nav div:first-of-type {
+    width: 200px;
+    display: block;
+    justify-content: center;
+    margin-left: 0;
+  }
+  .LoginBtn {
+    width: 70px;
+    padding: 5px;
+  }
+  .dropdown-menu {
+    right: 10px;
+  }
+}
+
 .home .CardDiv {
-  display: grid;
+  display: flex;
   margin: auto;
-  max-width: 1050px;
+  justify-content: center;
+  width: 100%;
   gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
+  padding-bottom: 10px;
 }
 
 .home .CardDiv .card {
-  max-width: 350px;
+  flex: 1;
+  width: 350px;
+  height: 200px;
   background-color: white;
-  max-height: 200px;
   border-radius: 10px;
   padding: 25px;
   margin-top: 50px;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+    padding 0.3s ease-in-out;
+}
+
+@media (max-width: 1141px) {
+  .home .CardDiv .card {
+    width: 330px;
+    height: 180px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 1051px) {
+  .home .CardDiv .card {
+    width: 300px;
+    height: 180px;
+    padding: 20px;
+  }
+  .home .CardDiv .card p {
+    font-size: 13px !important;
+    max-width: 280px !important;
+  }
+}
+
+@media (max-width: 971px) {
+  .home .CardDiv .card {
+    width: 250px;
+    height: 180px;
+    padding: 20px;
+  }
+  .home .CardDiv .card p {
+    font-size: 12px !important;
+    max-width: 230px !important;
+  }
+  .home .CardDiv .card h3 {
+    font-size: 15px !important;
+  }
+  .home .CardDiv .card span .LogoCard {
+    width: 20px;
+    height: 20px;
+  }
+  .home .CardDiv .card hr {
+    max-width: 35px;
+  }
+}
+
+@media (max-width: 809px) {
+  .home {
+    height: calc(100vh - 70px);
+  }
+  .home .CardDiv .card {
+    width: 220px;
+    height: 160px;
+    padding: 17px;
+  }
+  .home .CardDiv .card p {
+    font-size: 11px !important;
+    max-width: 200px !important;
+  }
+  .home .CardDiv .card h3 {
+    font-size: 13px !important;
+  }
+  .home .CardDiv .card span .LogoCard {
+    width: 15px;
+    height: 15px;
+  }
+  .home .CardDiv .card hr {
+    max-width: 35px;
+  }
+}
+
+@media (max-width: 709px) {
+  .home .CardDiv .card {
+    width: 180px;
+    height: 160px;
+    padding: 17px;
+  }
+  .home .CardDiv .card p {
+    font-size: 10px !important;
+    max-width: 170px !important;
+  }
+  .home .CardDiv .card h3 {
+    font-size: 13px !important;
+  }
+  .home .CardDiv .card span .LogoCard {
+    width: 15px;
+    height: 15px;
+  }
+  .home .CardDiv .card hr {
+    max-width: 35px;
+  }
+}
+
+@media (max-width: 599px) {
+  .home .CardDiv .card {
+    width: 150px;
+    height: 140px;
+    padding: 15px;
+  }
+  .home .CardDiv .card p {
+    display: none;
+  }
+  .home .CardDiv .card h3 {
+    font-size: 13px !important;
+    width: 100% !important;
+    text-align: center;
+  }
+  .home .CardDiv .card span {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .home .CardDiv .card span .LogoCard {
+    width: 15px;
+    height: 15px;
+  }
+  .home .CardDiv .card hr {
+    max-width: 35px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 501px) {
+  .home .CardDiv .card {
+    width: 110px;
+    height: 140px;
+    padding: 15px;
+  }
+  .home .CardDiv .card p {
+    display: none;
+  }
+  .home .CardDiv .card h3 {
+    font-size: 13px !important;
+    width: 100% !important;
+    text-align: center;
+  }
+  .home .CardDiv .card span {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .home .CardDiv .card span .LogoCard {
+    width: 15px;
+    height: 15px;
+  }
+  .home .CardDiv .card hr {
+    max-width: 35px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 371px) {
+  .home .CardDiv .card {
+    width: 90px;
+    height: 140px;
+    padding: 15px;
+  }
+  .home .CardDiv .card p {
+    display: none;
+  }
+  .home .CardDiv .card h3 {
+    font-size: 13px !important;
+    width: 100% !important;
+    text-align: center;
+  }
+  .home .CardDiv .card span {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .home .CardDiv .card span .LogoCard {
+    width: 15px;
+    height: 15px;
+  }
+  .home .CardDiv .card hr {
+    max-width: 35px;
+    margin: auto;
+  }
 }
 
 .home .CardDiv .card span {
@@ -240,17 +508,59 @@ header nav ul li a:hover {
   font-size: 14px;
   text-align: start;
   max-width: 330px;
+  transition: all 0.3 ease-in-out;
 }
 /** End Home Section */
 
 /** Start Course Section */
 .CoursesDiv {
-  background-color: white;
-  height: 100vh;
+  height: 125vh;
   max-width: 1100px;
   margin: auto;
   padding: 0px 2rem;
   margin-top: 100px;
+}
+
+@media (max-width: 878px) {
+  .CoursesDiv {
+    height: 125vh !important;
+  }
+}
+
+@media (max-width: 835px) {
+  .CoursesDiv {
+    height: 135vh !important;
+  }
+}
+
+@media (max-width: 743px) {
+  .CoursesDiv {
+    height: 120vh !important;
+  }
+}
+
+@media (max-width: 623px) {
+  .CoursesDiv {
+    height: 120vh !important;
+  }
+}
+
+@media (max-width: 490px) {
+  .CoursesDiv {
+    height: 125vh !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .CoursesDiv {
+    height: 135vh !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .CoursesDiv {
+    height: 145vh !important;
+  }
 }
 
 .CoursesDiv h6 {
@@ -268,6 +578,14 @@ header nav ul li a:hover {
   grid-template-columns: repeat(3, 320px);
   margin-top: 80px;
   gap: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper {
+  padding: 30px;
+  max-width: 100% !important;
+  height: 700px !important ;
+  margin-top: -20px !important;
 }
 
 .CourseCard {
@@ -275,10 +593,10 @@ header nav ul li a:hover {
   position: relative;
   color: var(--light-gray);
   transition: all 0.5s ease;
-  overflow: hidden; /* Ensures content doesn't jump */
+  overflow: hidden;
   background: white;
-  border-radius: 10px; /* Soft rounded corners */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .CoursesDiv .CourseCard .imgSection {
@@ -427,16 +745,85 @@ header nav ul li a:hover {
 .CoursesContainer:has(.CourseCard:hover) .CourseCard:not(:hover) {
   filter: blur(4px);
 }
+
+@media (max-width: 1100px) {
+  .CoursesContainer {
+    grid-template-columns: repeat(3, 300px) 0 !important;
+  }
+  .CourseCard img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .CoursesContainer {
+    grid-template-columns: repeat(3, 270px) 0 !important;
+  }
+  .CourseCard img {
+    width: 270px !important;
+  }
+}
+
+@media (max-width: 893px) {
+  .CoursesContainer {
+    grid-template-columns: repeat(3, 250px) !important;
+  }
+  .CourseCard img {
+    width: 250px !important;
+  }
+}
+
+@media (max-width: 837px) {
+  .CoursesContainer {
+    grid-template-columns: repeat(3, 220px) !important;
+  }
+  .CourseCard img {
+    width: 220px !important;
+  }
+  .CourseCard {
+    height: 650px;
+  }
+  .CoursesDiv {
+    height: 110vh;
+  }
+}
+
+@media (max-width: 837px) {
+  .CourseCard img {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 837px) {
+  .CourseCard {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 745px) {
+  .CourseCard {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 837px) {
+  .CourseCard {
+    height: 650px;
+  }
+}
+
 /** End Course Section */
 
 /** Start Review Section */
 .reviewsSection {
-  background-color: white;
-  height: 70vh;
+  /* background-color: white; */
+  /* height: 20vh; */
   max-width: 1100px;
   margin: auto;
   padding: 0px 2rem;
-  margin-top: 100px;
+  /* margin-top: 100px; */
+  padding-bottom: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 .reviewsSection h6 {
@@ -454,12 +841,70 @@ header nav ul li a:hover {
   grid-template-columns: repeat(3, 320px);
   margin-top: 80px;
   gap: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 1050px) {
+  .reviewsSection .ReviewContainer {
+    grid-template-columns: repeat(3, 300px);
+  }
+}
+
+@media (max-width: 950px) {
+  .reviewsSection .ReviewContainer {
+    grid-template-columns: repeat(3, 250px);
+  }
+}
+
+@media (max-width: 875px) {
+  .reviewsSection {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 835px) {
+  .reviewsSection .ReviewContainer {
+    grid-template-columns: repeat(3, 220px);
+  }
+}
+
+@media (max-width: 745px) {
+  .ReviewContainer {
+    display: flex !important;
+    height: 200px;
+  }
+  .swiperReview {
+    height: 400px !important;
+  }
+  .reviewsSection {
+    height: 600px;
+  }
+}
+
+@media (max-width: 430px) {
+  /* .reviewsSection {
+    margin-top: 110px;
+  } */
+  .ReviewContainer {
+    display: flex !important;
+    height: 250px;
+  }
+  .swiperReview {
+    height: 250px !important;
+  }
+  .reviewsSection {
+    height: 650px;
+  }
 }
 
 .ReviewContainer div img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.swiperRev {
+  height: 100px;
 }
 
 .ReviewContainer div {
@@ -471,7 +916,6 @@ header nav ul li a:hover {
   font-size: 15px;
   color: rgb(77, 77, 77);
   padding: 15px 0;
-
 }
 
 .instructor {
@@ -480,7 +924,7 @@ header nav ul li a:hover {
   margin: auto;
 }
 
-.instructor  .InstructorInfo {
+.instructor .InstructorInfo {
   text-align: start;
   margin-left: 10px;
 }
@@ -498,13 +942,13 @@ header nav ul li a:hover {
 }
 /** End Review Section */
 
-
 /** Start Join Section */
 .JoinSection {
   height: 40vh;
   background-color: var(--dark-blue);
   text-align: center;
   padding-top: 40px;
+  transition: all 0.3 ease-in-out;
 }
 
 .JoinSection h6 {
@@ -533,25 +977,40 @@ header nav ul li a:hover {
   border-radius: 5px 0px 0px 5px;
   border: none;
   outline: none;
+  transition: all 0.3 ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .JoinSection input {
+    width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .JoinSection input {
+    width: 200px;
+  }
+  .JoinSection {
+    height: 45vh;
+  }
 }
 
 .JoinSection button {
- padding: 10px;
- border-radius: 0px 5px 5px 0px; 
- outline: none;
- border: none;
- background-color: var(--sky-blue);
- color: white;
- font-weight: bold;
+  padding: 10px;
+  border-radius: 0px 5px 5px 0px;
+  outline: none;
+  border: none;
+  background-color: var(--sky-blue);
+  color: white;
+  font-weight: bold;
 }
 /** End Join Section */
 /** End Main Section */
 
-
 /** Start Footer */
 
 footer {
-   max-width: 1100px;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -566,7 +1025,7 @@ footer .FSectoins .Touch h2 {
   font-weight: bold;
 }
 
-.FSectoins .Touch h5{
+.FSectoins .Touch h5 {
   color: rgb(129, 129, 129);
   padding: 10px 0;
   max-width: 180px;
@@ -585,7 +1044,7 @@ footer .FSectoins .CompanyInfo h2 {
   font-weight: bold;
 }
 
-.FSectoins .CompanyInfo ul li a{
+.FSectoins .CompanyInfo ul li a {
   color: rgb(129, 129, 129);
   padding: 10px 0;
   max-width: 180px;
@@ -593,21 +1052,28 @@ footer .FSectoins .CompanyInfo h2 {
   font-size: 13px;
 }
 
+.FSectoins .Features ul li a:hover {
+  color: var(--dark-blue);
+}
+
+.FSectoins .CompanyInfo ul li a:hover {
+  color: var(--dark-blue);
+}
+
 .FSectoins .CompanyInfo ul {
   margin-top: 10px;
 }
 
-.FSectoins .CompanyInfo ul li{
+.FSectoins .CompanyInfo ul li {
   padding: 3px 0;
 }
-
 
 footer .FSectoins .Features h2 {
   font-size: 20px;
   font-weight: bold;
 }
 
-.FSectoins .Features ul li a{
+.FSectoins .Features ul li a {
   color: rgb(129, 129, 129);
   padding: 10px 0;
   max-width: 180px;
@@ -619,7 +1085,7 @@ footer .FSectoins .Features h2 {
   margin-top: 10px;
 }
 
-.FSectoins .Features ul li{
+.FSectoins .Features ul li {
   padding: 3px 0;
 }
 
@@ -633,5 +1099,40 @@ footer p span {
   color: var(--sky-blue);
   font-weight: bold;
 }
-/** End Footer */
 
+@media (max-width: 1100px) {
+  .FSectoins {
+    padding: 50px 5px !important;
+  }
+}
+
+@media (max-width: 630px) {
+  .Touch h2,
+  .CompanyInfo h2,
+  .Features h2 {
+    font-size: 17px !important;
+  }
+  .Touch h5 {
+    font-size: 13px !important;
+  }
+  .CompanyInfo ul li a,
+  .Features ul li a {
+    font-size: 11px !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .FSectoins {
+    flex-direction: column;
+    justify-content: center !important;
+  }
+  .FSectoins .CompanyInfo , .Features , .CompanyInfo {
+    margin-top: 15px;
+  }
+  .FSectoins {
+    padding : 20px 10px !important;  
+    padding-top: 30px !important;
+  }
+}
+
+/** End Footer */
