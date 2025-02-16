@@ -578,14 +578,6 @@ nav .menu-icon {
   grid-template-columns: repeat(3, 320px);
   margin-top: 80px;
   gap: 25px;
-  transition: all 0.3s ease-in-out;
-}
-
-.swiper {
-  padding: 30px;
-  max-width: 100% !important;
-  height: 700px !important ;
-  margin-top: -20px !important;
 }
 
 .CourseCard {
