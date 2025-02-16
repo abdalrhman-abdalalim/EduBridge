@@ -523,45 +523,22 @@ nav .menu-icon {
 
 @media (max-width: 878px) {
   .CoursesDiv {
-    height: 125vh !important;
-  }
-}
-
-@media (max-width: 835px) {
-  .CoursesDiv {
-    height: 135vh !important;
+    height: 900px !important;
   }
 }
 
 @media (max-width: 743px) {
   .CoursesDiv {
-    height: 120vh !important;
-  }
-}
-
-@media (max-width: 623px) {
-  .CoursesDiv {
-    height: 120vh !important;
-  }
-}
-
-@media (max-width: 490px) {
-  .CoursesDiv {
-    height: 125vh !important;
+    height: 900px !important;
   }
 }
 
 @media (max-width: 430px) {
   .CoursesDiv {
-    height: 135vh !important;
+    height: 1000px !important;
   }
 }
 
-@media (max-width: 350px) {
-  .CoursesDiv {
-    height: 145vh !important;
-  }
-}
 
 .CoursesDiv h6 {
   color: var(--sky-blue);
@@ -772,35 +749,33 @@ nav .menu-icon {
   .CourseCard img {
     width: 220px !important;
   }
-  .CourseCard {
-    height: 650px;
-  }
   .CoursesDiv {
     height: 110vh;
   }
-}
-
-@media (max-width: 837px) {
   .CourseCard img {
     width: 100% !important;
   }
 }
 
-@media (max-width: 837px) {
-  .CourseCard {
-    margin-top: 20px;
+@media (max-width: 745px) {
+  .CoursesDiv {
+    height: 110vh;
   }
 }
 
 @media (max-width: 745px) {
   .CourseCard {
-    margin-top: 20px;
+    margin-top: 40px !important;
+  }
+  .CourseCard {
+    max-width: 400px;
+    margin: auto;
   }
 }
 
 @media (max-width: 837px) {
   .CourseCard {
-    height: 650px;
+    height: 600px !important;
   }
 }
 
@@ -874,9 +849,6 @@ nav .menu-icon {
 }
 
 @media (max-width: 430px) {
-  /* .reviewsSection {
-    margin-top: 110px;
-  } */
   .ReviewContainer {
     display: flex !important;
     height: 250px;
@@ -886,6 +858,25 @@ nav .menu-icon {
   }
   .reviewsSection {
     height: 650px;
+  }
+  .reviewsSection{
+    margin-top: -50px;
+  }
+}
+
+@media (max-width: 375px) {
+  /* .ReviewContainer {
+    display: flex !important;
+    height: 250px;
+  }
+  .swiperReview {
+    height: 250px !important;
+  } */
+  .reviewsSection {
+    height: 650px;
+  }
+  .reviewsSection{
+    margin-top: -20px;
   }
 }
 
@@ -1098,6 +1089,21 @@ footer p span {
   }
 }
 
+@media (max-width: 550px) {
+  footer p {
+    text-align: center;
+    padding: 11px 0;
+    color: rgb(99, 99, 99);
+    font-size: 13px;
+  }
+
+  footer p span {
+    color: var(--sky-blue);
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 630px) {
   .Touch h2,
   .CompanyInfo h2,
@@ -1118,11 +1124,13 @@ footer p span {
     flex-direction: column;
     justify-content: center !important;
   }
-  .FSectoins .CompanyInfo , .Features , .CompanyInfo {
+  .FSectoins .CompanyInfo,
+  .Features,
+  .CompanyInfo {
     margin-top: 15px;
   }
   .FSectoins {
-    padding : 20px 10px !important;  
+    padding: 20px 10px !important;
     padding-top: 30px !important;
   }
 }
