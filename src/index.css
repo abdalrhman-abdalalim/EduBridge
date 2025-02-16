@@ -584,7 +584,7 @@ nav .menu-icon {
 .swiper {
   padding: 30px;
   max-width: 350px;
-  height: 600px !important ;
+  height: 700px !important ;
 }
 
 .CourseCard {
@@ -873,7 +873,7 @@ nav .menu-icon {
     height: 200px;
   }
   .swiperReview {
-    height: 300px !important;
+    height: 400px !important;
   }
   .reviewsSection {
     height: 600px;
