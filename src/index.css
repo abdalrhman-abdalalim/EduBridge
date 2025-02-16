@@ -514,7 +514,6 @@ nav .menu-icon {
 
 /** Start Course Section */
 .CoursesDiv {
-  background-color: yellow;
   height: 125vh;
   max-width: 1100px;
   margin: auto;
@@ -816,7 +815,6 @@ nav .menu-icon {
 
 /** Start Review Section */
 .reviewsSection {
-  background-color: green;
   /* background-color: white; */
   /* height: 20vh; */
   max-width: 1100px;
